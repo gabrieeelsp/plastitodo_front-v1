@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+        context: ./
+        dockerfile: Dockerfile
+    image: vue_vue-cli
+    command: sh -c "npm install && npm run serve"
+    ports:
+      - 8086:8080
+    working_dir: /app
+    volumes:
+      - ./:/app 
